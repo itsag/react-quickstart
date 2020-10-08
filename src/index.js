@@ -1,17 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+// Modules
+import React from "react";
+import ReactDOM from "react-dom";
 
+// Libraries
+import { UiBrowserRouter } from "./modules/libraries/router";
+
+// Content
+import Content from "./modules/components/content";
+
+// Styles
+import { GlobalStyles } from "./styles/global.styles";
+import { ReactToastifyStyles } from "./styles/react-toastify.styles";
+
+// Render
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+  <UiBrowserRouter>
+    <GlobalStyles />
+    <ReactToastifyStyles />
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+    <Content />
+  </UiBrowserRouter>,
+  document.getElementById("app")
+);
